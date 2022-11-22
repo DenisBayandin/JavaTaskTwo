@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.Observable;
 import java.util.Observer;
-import javax.swing.JPanel;
+import javax.swing.*;
 import mvc.controller.Controller;
 
 /**
@@ -35,7 +35,15 @@ public class MyPanel extends JPanel implements Observer{
                 c.mouseDragged(e.getPoint());
             }
         });
+        addMouseListener(new MouseAdapter() {
+            public void mousePressed( MouseEvent  e) {
+                c.clearPressed(e.getPoint());
+            }
+        });
+        
     }
+    
+    
 
     @Override
     protected void paintComponent(Graphics g) {

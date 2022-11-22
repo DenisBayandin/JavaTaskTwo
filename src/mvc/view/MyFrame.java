@@ -18,16 +18,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JToolBar;
-import mvc.menu.SwitchAction;
-import mvc.menu.SwitchColor;
-import mvc.menu.SwitchState;
-import mvc.menu.SwitchFill;
-import mvc.menu.SwitchRedo;
-import mvc.menu.SwitchShape;
-import mvc.menu.SwitchUndo;
+import mvc.menu.*;
 import mvc.model.action.ActionBehavior;
 import static mvc.model.action.ActionBehavior.Draw;
 import static mvc.model.action.ActionBehavior.Move;
+import mvc.model.action.ActionDeleteBehavior;
+import static mvc.model.action.ActionDeleteBehavior.Clear;
 import mvc.model.shape.FillBehavior;
 import mvc.model.shape.MyShape;
 import mvc.model.undomachine.UndoMachine;
@@ -70,6 +66,8 @@ public class MyFrame extends JFrame {
                 new SwitchAction( Draw,state)));
         menuItems.add(new SwitchState("двигать", new ImageIcon("move.gif"),
                 new SwitchAction( Move,state)));
+        menuItems.add(new SwitchState("удаление", new ImageIcon("delete.jpg"), 
+                new SwitchDelete(Clear, state)));
         menuItems.add(new SwitchUndo("undo", new ImageIcon("undo.gif"), um));
         menuItems.add(new SwitchRedo("redo", new ImageIcon("redo.gif"), um));
         menuItems.add(new SwitchState("выбор цвета", new ImageIcon("colors.gif"),

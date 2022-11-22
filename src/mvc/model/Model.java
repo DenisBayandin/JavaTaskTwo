@@ -77,6 +77,16 @@ public class Model extends Observable {
         }
         return currentShape;
     }
+    
+    public MyShape clearPressMove(Point2D[] p) {
+        currentShape = null;
+        for (MyShape x : listShape) {
+            if (x.getShape().contains(p[0])) {
+                listShape.remove(x);
+            }
+        }
+        return currentShape;
+    }
 
     public MyShape unexecuteDraw() {
         MyShape s = listShape.remove(listShape.size() - 1);
