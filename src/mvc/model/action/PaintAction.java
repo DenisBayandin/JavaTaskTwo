@@ -63,7 +63,7 @@ public class PaintAction {
 
     public void deletePress(Point2D p){
         this.p[0] = p;
-        shape = delete_ab.clearPress(model, this.p);
+        shape = ab.clearPress(model, this.p);
     }
     
     public void actionPress(Point2D p) {

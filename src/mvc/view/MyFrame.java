@@ -22,8 +22,9 @@ import mvc.menu.*;
 import mvc.model.action.ActionBehavior;
 import static mvc.model.action.ActionBehavior.Draw;
 import static mvc.model.action.ActionBehavior.Move;
+import static mvc.model.action.ActionBehavior.Clear;
 import mvc.model.action.ActionDeleteBehavior;
-import static mvc.model.action.ActionDeleteBehavior.Clear;
+//import static mvc.model.action.ActionDeleteBehavior.Clear;
 import mvc.model.shape.FillBehavior;
 import mvc.model.shape.MyShape;
 import mvc.model.undomachine.UndoMachine;
@@ -67,7 +68,7 @@ public class MyFrame extends JFrame {
         menuItems.add(new SwitchState("двигать", new ImageIcon("move.gif"),
                 new SwitchAction( Move,state)));
         menuItems.add(new SwitchState("удаление", new ImageIcon("delete.jpg"), 
-                new SwitchDelete(Clear, state)));
+                new SwitchAction( Clear, state)));
         menuItems.add(new SwitchUndo("undo", new ImageIcon("undo.gif"), um));
         menuItems.add(new SwitchRedo("redo", new ImageIcon("redo.gif"), um));
         menuItems.add(new SwitchState("выбор цвета", new ImageIcon("colors.gif"),

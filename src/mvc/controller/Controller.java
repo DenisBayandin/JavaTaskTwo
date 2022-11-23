@@ -37,15 +37,18 @@ public class Controller {
         
     }
 
-    public void clearPressed(Point point){
-        state.getAction().deletePress(point);
-        um.add(state.getAction().clone());
-    }
+//    public void clearPressed(Point point){
+//        state.getAction().deletePress(point);
+//        um.add(state.getAction().clone());
+//    }
     
     public void mousePressed(Point point) {
         state.getAction().actionPress(point);
+        state.getAction().deletePress(point);
          um.add(state.getAction().clone());
     }
+    
+    
 
     public void mouseDragged(Point point) {
         state.getAction().actionDrag(point);

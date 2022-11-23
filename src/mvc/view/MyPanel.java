@@ -37,7 +37,7 @@ public class MyPanel extends JPanel implements Observer{
         });
         addMouseListener(new MouseAdapter() {
             public void mousePressed( MouseEvent  e) {
-                c.clearPressed(e.getPoint());
+                c.mousePressed(e.getPoint());
             }
         });
         

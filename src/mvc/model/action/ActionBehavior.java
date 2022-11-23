@@ -37,6 +37,11 @@ public enum ActionBehavior {
         public MyShape unexecute(Model model,MyShape shape) {
             return model.unexecuteDraw();
         }
+
+        @Override
+        public MyShape clearPress(Model model, Point2D[] p) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
     },Move{
         
 
@@ -60,9 +65,42 @@ public enum ActionBehavior {
              model.reseverMove();
             return shape;
         }
+
+        @Override
+        public MyShape clearPress(Model model, Point2D[] p) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }, Clear{
+        @Override
+        public MyShape clearPress(Model model, Point2D[] p) {
+            return model.clearPressMove(p);
+        }
+
+        @Override
+        public MyShape actionPress(Model model, Point2D[] p) {
+            return model.actionPressDraw(p);
+        }
+
+        @Override
+        public MyShape actionDrag(Model model, Point2D[] p) {
+            return model.acctionDragDraw(p);
+        }
+
+        @Override
+        public MyShape execute(Model model,MyShape shape) {
+            model.reseverMove();
+            return shape;
+        }
+
+        @Override
+        public MyShape unexecute(Model model,MyShape shape) {
+             model.reseverMove();
+            return shape;
+        }
+        
     };
    
-   
+    public abstract MyShape clearPress(Model model,Point2D []p);
     public abstract MyShape actionPress(Model model,Point2D []p);
     public abstract MyShape actionDrag(Model model,Point2D []p);
     public abstract MyShape execute(Model model,MyShape shape);
