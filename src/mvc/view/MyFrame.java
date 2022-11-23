@@ -23,7 +23,6 @@ import mvc.model.action.ActionBehavior;
 import static mvc.model.action.ActionBehavior.Draw;
 import static mvc.model.action.ActionBehavior.Move;
 import static mvc.model.action.ActionBehavior.Clear;
-import mvc.model.action.ActionDeleteBehavior;
 //import static mvc.model.action.ActionDeleteBehavior.Clear;
 import mvc.model.shape.FillBehavior;
 import mvc.model.shape.MyShape;

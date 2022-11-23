@@ -10,7 +10,6 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.RectangularShape;
 import mvc.model.Model;
 import mvc.model.action.ActionBehavior;
-import mvc.model.action.ActionDeleteBehavior;
 import mvc.model.action.PaintAction;
 import mvc.model.shape.FillBehavior;
 import mvc.model.shape.MyShape;
@@ -56,10 +55,6 @@ public class State {
 
     public void setAction(ActionBehavior actionBehavior) {
         action.setAb(actionBehavior);
-    }
-
-    public void setActionDelete(ActionDeleteBehavior actionDelete) {
-        action.setAb(actionDelete);
     }
     
     public void setRectangularShape(RectangularShape rs) {

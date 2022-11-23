@@ -21,7 +21,6 @@ public class PaintAction {
     Point2D[] pOld;
     MyShape shape;
     ActionBehavior ab;
-    ActionDeleteBehavior delete_ab;
 
     public PaintAction(ActionBehavior ab) {
         this.ab = ab;
@@ -36,10 +35,6 @@ public class PaintAction {
 
     public void setAb(ActionBehavior ab) {
         this.ab = ab;
-    }
-    
-    public void setAb(ActionDeleteBehavior delete_ab) {
-        this.delete_ab = delete_ab;
     }
 
     public void setModel(Model model) {
